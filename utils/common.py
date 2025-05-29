@@ -1,6 +1,12 @@
 from typing import Mapping, Any, Tuple, Callable
 import importlib
 import os
+import sys
+# Add custom_nodes path
+custom_nodes_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if custom_nodes_path not in sys.path:
+    sys.path.append(custom_nodes_path)
+    
 from urllib.parse import urlparse
 
 import torch
